@@ -1,0 +1,24 @@
+Variables
+
+String warrior
+String mage
+
+Constructor
+
+
+Methods
+
+abilities method
+- changes abilities based on the class user picks
+
+battle method
+- choose between attack and defense
+
+randomized enemies method
+- randomizes the enemies that the user meets
+
+movement method
+- allows for the user to move through the location
+
+win location method
+- sets a place that the user has to get to in order to win

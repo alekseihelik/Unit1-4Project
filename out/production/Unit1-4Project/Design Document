@@ -1,0 +1,80 @@
+Character class
+
+Variables
+String chosenClass
+String chosenName
+String location
+
+Constructor
+public Character(String class, String name)
+- get user to input "warrior" or "mage" based on what class they want
+- set their chosen class to a variable to be used in methods
+- set their chosen name to a variable to be used in methods
+
+public Character()
+- randomizes a character by randomly picking between one of the two classes, and randomly picks from 1 of 10 names
+- sets the class and name to variables
+
+Methods
+
+inventory method
+- creates an inventory for the user to store items
+- items to heal/do specific actions
+- displays the inventory when the command is run
+
+healthbar method
+- creates a healthbar for the user
+- goes down everytime the user is attacked
+- once it reaches 0, user loses
+- user has different options in order to get their health back up
+- use items, rest
+- warrior has more health than mage
+
+random location method
+- randomizes the location that the user starts at and sets it to a variable
+- three different locations
+- forest, cave, desert
+- different enemies based on the location
+
+abilities method
+- changes abilities based on the class user picks
+- four different abilities for both classes
+- two options for attack, two for defense
+- warrior attacks: one hit, high dmg/ multi-hit(random chance for hits), low dmg
+- warrior defense: block(lessens dmg taken)/roll(chance to avoid all dmg)
+- mage attacks: one hit, high dmg, chance for burn dmg(fireball)/one hit, high dmg, chance the enemy is paralyzed(thunderbolt)
+- mage defense: block(blocks all dmg)/heal(heals some of the healthbar)
+
+battle method
+- choose between attack and defense
+- has two options for attack and defense based on user's class
+- enemy's choice is randomized
+- higher chance for enemy to attack when user healthbar is low
+
+randomized enemies method
+- randomizes the enemies that the user meets
+- sets the enemies that can be chosen based on the location
+- four different enemies each location
+- user has to defeat at least two different enemies to progress
+- boss?
+
+movement method
+- allows for the user to move through the location
+- user can move north, south, east, west
+- different directions have different endings depending on what paths you go on
+- different paths can intersect
+
+win location method
+- sets a place that the user has to get to in order to win
+- once the user has moved through the correct locations and has beaten the required enemies, they win
+
+Adventure class
+- Welcomes the user to the location that they start in
+- Asks for their name and class, or the user can press a key to randomize the selection
+- Displays the user's character and abilities
+- Begins the adventure by asking what they want to do
+- Use a while loop for the movement and randomized enemies
+- Use while loop for battle
+- If the character dies, the user loses
+- Once the user's character gets to a specific location, they win
+- Display their total stats

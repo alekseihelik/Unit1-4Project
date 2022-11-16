@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class Adventure {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Scanner answer = new Scanner(System.in);
         String yourClass = "";
         Character yourCharacter = null;
@@ -30,6 +30,19 @@ public class Adventure {
             yourCharacter = character;
         }
         System.out.println(yourCharacter.info());
+        Thread.sleep(2000);
+        System.out.println("You are level " + yourCharacter.level());
+        Thread.sleep(2000);
+        System.out.println("You will start with " + yourCharacter.healthbar() + " health.");
+        Thread.sleep(2000);
+        System.out.println("Level up by killing enemies!");
+        Thread.sleep(2000);
+        System.out.println("Leveling up will increase your total health by 2 and heal you to full health.");
+        Thread.sleep(2000);
+        System.out.println("You can also use items that you find to heal yourself!");
+        Thread.sleep(2000);
         System.out.println("Your adventure will be in the " + yourCharacter.location());
+        Thread.sleep(2000);
+        System.out.println("Good luck!");
     }
 }

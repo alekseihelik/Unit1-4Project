@@ -2,6 +2,11 @@ public class Character {
     private String chosenClass = "";
     private String chosenName = "";
     private String yourLocation = "";
+    private int currentHealthbar;
+    private int level = 1;
+    private int expbar = 100;
+    private int expgained = 0;
+    private int totalHealthbar;
 
     public Character(int yourClass , String name){
         chosenName = name;
@@ -55,6 +60,7 @@ public class Character {
     public String info(){
         return "Your character's name is " + chosenName + ", and your class is " + chosenClass;
     }
+
     public String location(){
         String thisLocation;
         int picker = (int)(Math.random()*3)+1;
@@ -68,5 +74,27 @@ public class Character {
             thisLocation = "desert.";
         }
         return thisLocation;
+    }
+
+    public int healthbar(){
+        if (chosenClass.equals("Warrior")){
+            totalHealthbar = 15;
+        }
+        else if (chosenClass.equals("Mage")){
+            totalHealthbar = 7;
+        }
+        currentHealthbar = totalHealthbar;
+        return currentHealthbar;
+    }
+
+    public int level(){
+        if ((expbar - expgained) <= 0){
+            level++;
+            expgained = expgained-expbar;
+            expbar += 50;
+            totalHealthbar += 2;
+            currentHealthbar = totalHealthbar;
+        }
+        return level;
     }
 }

@@ -59,13 +59,13 @@ public class Character {
         String thisLocation;
         int picker = (int)(Math.random()*3)+1;
         if (picker == 1){
-            thisLocation = "forest";
+            thisLocation = "forest.";
         }
         else if(picker == 2){
-            thisLocation = "cave";
+            thisLocation = "cave.";
         }
         else {
-            thisLocation = "desert";
+            thisLocation = "desert.";
         }
         return thisLocation;
     }

@@ -8,6 +8,10 @@ public class Adventure {
         System.out.println("Lets create your character!");
         System.out.println("What class do you want to pick? Enter 1 for warrior, 2 for mage, or 0 if you want character creation to be randomized.");
         int classPick = Integer.parseInt(answer.nextLine());
+        while ((classPick != 0) && (classPick != 1) && (classPick != 2)){
+            System.out.println("Only enter 1, 2, or 0.");
+            classPick = Integer.parseInt(answer.nextLine());
+        }
         if (classPick == 0){
             Character character = new Character();
             yourCharacter = character;

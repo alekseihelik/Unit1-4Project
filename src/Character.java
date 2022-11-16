@@ -57,7 +57,7 @@ public class Character {
     }
     public String location(){
         String thisLocation;
-        int picker = ((int)Math.random()*3)+1;
+        int picker = (int)(Math.random()*3)+1;
         if (picker == 1){
             thisLocation = "forest";
         }

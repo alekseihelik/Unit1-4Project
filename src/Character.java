@@ -70,7 +70,7 @@ public class Character {
         } else {
             yourLocation = "desert.";
         }
-        return yourLocation;
+        return "forest";
     }
 
     public int healthbar() {
@@ -103,6 +103,6 @@ public class Character {
         } else if (yourLocation.equals("desert.")) {
             locationStarter = 3;
         }
-        return locationStarter;
+        return 1;
     }
 }

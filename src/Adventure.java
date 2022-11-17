@@ -30,19 +30,36 @@ public class Adventure {
             yourCharacter = character;
         }
         System.out.println(yourCharacter.info());
-        Thread.sleep(2000);
+        Thread.sleep(1500);
         System.out.println("You are level " + yourCharacter.level());
-        Thread.sleep(2000);
+        Thread.sleep(1500);
         System.out.println("You will start with " + yourCharacter.healthbar() + " health.");
-        Thread.sleep(2000);
+        Thread.sleep(1500);
         System.out.println("Level up by killing enemies!");
-        Thread.sleep(2000);
+        Thread.sleep(1500);
         System.out.println("Leveling up will increase your total health by 2 and heal you to full health.");
-        Thread.sleep(2000);
+        Thread.sleep(1500);
         System.out.println("You can also use items that you find to heal yourself!");
-        Thread.sleep(2000);
+        Thread.sleep(1500);
         System.out.println("Your adventure will be in the " + yourCharacter.location());
-        Thread.sleep(2000);
+        Thread.sleep(1500);
         System.out.println("Good luck!");
+        Thread.sleep(2000);
+        if (yourCharacter.locationStart() == 1){
+            System.out.println("You find yourself in a dense forest.");
+            Thread.sleep(1500);
+            System.out.println("You hear flowing water to your left, but on your right you can faintly make out a bright light.\nWhich way do you want to go?");
+            input = answer.nextLine();
+            while (!(input.equals("left")) || !(input.equals("right"))){
+                System.out.println("Only enter left or right.");
+                input = answer.nextLine();
+            }
+            if (input.equals("left")){
+                System.out.println("You make your way towards the sound of the water.");
+            }
+            else if (input.equals("right")){
+                System.out.println("You make your way towards the light.");
+            }
+        }
     }
 }

@@ -3,10 +3,8 @@ public class Character {
     private String chosenName = "";
     private String yourLocation = "";
     private int currentHealthbar;
-    private int level = 1;
-    private int expbar = 100;
-    private int expgained = 0;
     private int totalHealthbar;
+    private String[] inventory = new String [10];
 
     public Character(int yourClass, String name) {
         chosenName = name;
@@ -57,12 +55,11 @@ public class Character {
         }
     }
 
-    public String info() {
+    public String toString() {
         return "Your character's name is " + chosenName + ", and your class is " + chosenClass;
     }
 
-    public String location() {
-        int picker = (int) (Math.random() * 3) + 1;
+    public String location(int picker) {
         if (picker == 1) {
             yourLocation = "forest.";
         } else if (picker == 2) {
@@ -70,28 +67,27 @@ public class Character {
         } else {
             yourLocation = "desert.";
         }
-        return "forest";
+        if (picker == 0){
+            int random = (int)(Math.random()*3)+1;
+            if (random == 1) {
+                yourLocation = "forest.";
+            } else if (random == 2) {
+                yourLocation = "cave.";
+            } else {
+                yourLocation = "desert.";
+            }
+        }
+        return yourLocation;
     }
 
     public int healthbar() {
         if (chosenClass.equals("Warrior")) {
-            totalHealthbar = 15;
+            totalHealthbar = 20;
         } else if (chosenClass.equals("Mage")) {
-            totalHealthbar = 7;
+            totalHealthbar = 12;
         }
         currentHealthbar = totalHealthbar;
         return currentHealthbar;
-    }
-
-    public int level() {
-        if ((expbar - expgained) <= 0) {
-            level++;
-            expgained = expgained - expbar;
-            expbar += 50;
-            totalHealthbar += 2;
-            currentHealthbar = totalHealthbar;
-        }
-        return level;
     }
 
     public int locationStart() {
@@ -103,6 +99,93 @@ public class Character {
         } else if (yourLocation.equals("desert.")) {
             locationStarter = 3;
         }
-        return 1;
+        return locationStarter;
+    }
+    public void gameLose(){
+        if (currentHealthbar == 0){
+            System.exit(0);
+        }
+    }
+
+    public String[] characterInventory(){
+        return inventory;
+    }
+
+    public String takeDamage(int damage){
+        currentHealthbar = currentHealthbar - damage;
+        return "You took " + damage + " damage! You have " + currentHealthbar + " health left!";
+    }
+
+    public int attack(int attackChoice){
+        int dmg = 0;
+        if (chosenClass.equals("Warrior")){
+            if (attackChoice == 1){
+                dmg = (int)(Math.random()*4)+5;
+            }
+            else {
+                int attacks = (int)(Math.random()*4)+2;
+                dmg = 2 * attacks;
+            }
+        } // end of warrior attacks
+        if (chosenClass.equals("Mage")){
+            if (attackChoice == 1){
+                dmg = (int)(Math.random()*4)+6;
+            }
+            else {
+                int attacks = (int)(Math.random()*3)+2;
+                dmg = 3 * attacks;
+            }
+        } // end of mage attacks
+        return dmg;
+    }
+
+    public int defend(int defenseChoice, int damageTaken){
+        int finalDamage = 0;
+        if (chosenClass.equals("Warrior")){
+            if (defenseChoice == 1){
+                finalDamage = (damageTaken/2) - 2;
+            }
+            else {
+                int dodgeChance = (int)(Math.random()*3)+1;
+                if (dodgeChance == 1){
+                    finalDamage = 0;
+                }
+                else if (dodgeChance == 2){
+                    finalDamage = damageTaken/3;
+                }
+                else {
+                    finalDamage = damageTaken;
+                }
+            }
+        }
+        if (chosenClass.equals("Mage")){
+            if (defenseChoice == 1){
+                finalDamage = damageTaken/3;
+            }
+            else {
+                int dodgeChance = (int)(Math.random()*3)+1;
+                if (dodgeChance == 1){
+                    finalDamage = 0;
+                }
+                else if (dodgeChance == 2){
+                    finalDamage = damageTaken/3;
+                }
+                else {
+                    finalDamage = damageTaken;
+                }
+            }
+        }
+        if (finalDamage < 0){
+            finalDamage = 0;
+        }
+        return finalDamage;
+    }
+
+    public String youLose(){
+        String lose = "";
+        if (currentHealthbar <= 0){
+            lose = "You lost!";
+        }
+        return lose;
     }
 }

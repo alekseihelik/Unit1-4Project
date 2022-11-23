@@ -5,6 +5,10 @@ public class Monster {
         health = (int)(Math.random()*7)+6;
     }
 
+    public Monster(int level){
+        health = (int)(Math.random()*7)+9;
+    }
+
     public String status(){
         String monsterStatus = "";
         if(health <= 0){

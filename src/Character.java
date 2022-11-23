@@ -5,6 +5,7 @@ public class Character {
     private int currentHealthbar;
     private int totalHealthbar;
     private String[] inventory = new String [10];
+    private boolean necklace = false;
 
     public Character(int yourClass, String name) {
         chosenName = name;
@@ -136,6 +137,9 @@ public class Character {
                 dmg = 3 * attacks;
             }
         } // end of mage attacks
+        if (necklace){
+            dmg += 2;
+        }
         return dmg;
     }
 
@@ -187,5 +191,11 @@ public class Character {
             lose = "You lost!";
         }
         return lose;
+    }
+
+    public void hasNecklace(boolean equipped){
+        if (equipped){
+            necklace = true;
+        }
     }
 }

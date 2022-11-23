@@ -195,11 +195,13 @@ public class Adventure {
                     yourCharacter.hasNecklace(true);
                     Thread.sleep(1000);
                     System.out.println("The cave leads into a tunnel. As you walk through the tunnel, you can see a faint light at the end, leading outside.");
-                    Thread.sleep(1500);
+                    Thread.sleep(2000);
                     System.out.println("You leave the tunnel...");
-                    if (enemyOne.monsterAppears().equals("A monster has appeared! Fight it!"))
+                    Thread.sleep(2500);
+                    String appearanceTwo = enemyOne.monsterAppears();
+                    if (appearanceTwo.equals("A monster has appeared! Fight it!"))
                     {
-                        System.out.println(enemyOne.monsterAppears());
+                        System.out.println(appearanceTwo);
                         Monster enemyTwo = new Monster(1);
                         Thread.sleep(1000);
                         while (!(enemyTwo.isDead())) {
@@ -271,7 +273,7 @@ public class Adventure {
                         }
                         System.out.println("You won the battle!");
                     }
-                    if (enemyOne.monsterAppears().equals("It seems like there are no monsters here. Let's keep going!")) {
+                    if (appearanceTwo.equals("It seems like there are no monsters here. Let's keep going!")) {
                         System.out.println("It seems like there are no monsters here. Let's keep going!");
                     }
                     Thread.sleep(2000);

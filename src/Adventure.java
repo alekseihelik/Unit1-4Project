@@ -283,12 +283,6 @@ public class Adventure {
                     Thread.sleep(2000);
                     System.out.println("Seeing no other way forward, you push open the door.");
                     Thread.sleep(2000);
-                    System.out.print("To be continued.");
-                    Thread.sleep(1500);
-                    System.out.print(" .");
-                    Thread.sleep(1500);
-                    System.out.println(" .");
-                    Thread.sleep(2000);
                 } // end of waterfall path
                 else if (input.equalsIgnoreCase("right")) {
                     System.out.println("You make your way towards the source of the light.");

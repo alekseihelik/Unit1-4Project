@@ -57,7 +57,7 @@ public class Adventure {
         System.out.print("Pick your option: ");
         String location = answer.nextLine();
         while (!(location.equals("0")) && !(location.equals("1")) && !(location.equals("2")) && !(location.equals("3"))){
-            System.out.println("Only enter 0, 1, 2, or 3.");
+            System.out.print("Only enter 0, 1, 2, or 3.");
             location = answer.nextLine();
         }
         int chosenLocation = Integer.parseInt(location);
@@ -107,7 +107,7 @@ public class Adventure {
                         System.out.print("Pick your option: ");
                         String choice = answer.nextLine();
                         while (!(choice.equals("1")) && !(choice.equals("2"))){
-                            System.out.println("Only pick 1 or 2.");
+                            System.out.print("Only pick 1 or 2.");
                             choice = answer.nextLine();
                         }
                         int battleChoice = Integer.parseInt(choice);
@@ -124,7 +124,7 @@ public class Adventure {
                             System.out.print("Pick your option: ");
                             String attack = answer.nextLine();
                             while (!(attack.equals("1")) && !(attack.equals("2"))){
-                                System.out.println("Only pick 1 or 2.");
+                                System.out.print("Only pick 1 or 2.");
                                 attack = answer.nextLine();
                             }
                             int attackChoice = Integer.parseInt(attack);
@@ -152,7 +152,7 @@ public class Adventure {
                             System.out.print("Pick your option: ");
                             String defend = answer.nextLine();
                             while (!(defend.equals("1")) && !(defend.equals("2"))){
-                                System.out.println("Only pick 1 or 2.");
+                                System.out.print("Only pick 1 or 2.");
                                 defend = answer.nextLine();
                             }
                             int defendChoice = Integer.parseInt(defend);
@@ -181,7 +181,7 @@ public class Adventure {
                 System.out.print("Pick your option: ");
                 String path = answer.nextLine();
                 while (!(path.equals("1")) && !(path.equals("2"))){
-                    System.out.println("Only pick 1 or 2.");
+                    System.out.print("Only pick 1 or 2.");
                     path = answer.nextLine();
                 }
                 int pathChoice = Integer.parseInt(path);
@@ -210,7 +210,7 @@ public class Adventure {
                         System.out.print("Pick your option: ");
                         String choice = answer.nextLine();
                         while (!(choice.equals("1")) && !(choice.equals("2"))){
-                            System.out.println("Only pick 1 or 2.");
+                            System.out.print("Only pick 1 or 2.");
                             choice = answer.nextLine();
                         }
                         int battleChoice = Integer.parseInt(choice);
@@ -227,7 +227,7 @@ public class Adventure {
                             System.out.print("Pick your option: ");
                             String attack = answer.nextLine();
                             while (!(attack.equals("1")) && !(attack.equals("2"))){
-                                System.out.println("Only pick 1 or 2.");
+                                System.out.print("Only pick 1 or 2.");
                                 attack = answer.nextLine();
                             }
                             int attackChoice = Integer.parseInt(attack);
@@ -255,7 +255,7 @@ public class Adventure {
                             System.out.print("Pick your option: ");
                             String defend = answer.nextLine();
                             while (!(defend.equals("1")) && !(defend.equals("2"))){
-                                System.out.println("Only pick 1 or 2.");
+                                System.out.print("Only pick 1 or 2.");
                                 defend = answer.nextLine();
                             }
                             int defendChoice = Integer.parseInt(defend);
@@ -282,7 +282,7 @@ public class Adventure {
                 System.out.print("Pick your option: ");
                 String path = answer.nextLine();
                 while (!(path.equals("1")) && !(path.equals("2"))){
-                    System.out.println("Only pick 1 or 2.");
+                    System.out.print("Only pick 1 or 2.");
                     path = answer.nextLine();
                 }
                 int pathChoice = Integer.parseInt(path);

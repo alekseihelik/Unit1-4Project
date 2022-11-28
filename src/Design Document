@@ -3,7 +3,10 @@ Character class
 Variables
 String chosenClass
 String chosenName
-String location
+String yourLocation
+int currentHealthbar
+int totalHealthbar
+boolean necklace
 
 Constructor
 public Character(String class, String name)
@@ -17,10 +20,6 @@ public Character()
 
 Methods
 
-inventory method
-- creates an inventory for the user to store items
-- items to heal/do specific actions
-- displays the inventory when the command is run
 
 healthbar method
 - creates a healthbar for the user
@@ -34,39 +33,22 @@ random location method
 - randomizes the location that the user starts at and sets it to a variable
 - three different locations
 - forest, cave, desert
-- different enemies based on the location
 
-abilities method
-- changes abilities based on the class user picks
-- four different abilities for both classes
-- two options for attack, two for defense
-- warrior attacks: one hit, high dmg/ multi-hit(random chance for hits), low dmg
-- warrior defense: block(lessens dmg taken)/roll(chance to avoid all dmg)
-- mage attacks: one hit, high dmg, chance for burn dmg(fireball)/one hit, high dmg, chance the enemy is paralyzed(thunderbolt)
-- mage defense: block(blocks all dmg)/heal(heals some of the healthbar)
+attack method
+- allows the user to attack
+- tells how much damage they did
 
-battle method
-- choose between attack and defense
-- has two options for attack and defense based on user's class
-- enemy's choice is randomized
-- higher chance for enemy to attack when user healthbar is low
+defend method
+- allows the user to defend
+- reduces damage taken
+- tells how much damage was taken
 
-randomized enemies method
-- randomizes the enemies that the user meets
-- sets the enemies that can be chosen based on the location
-- four different enemies each location
-- user has to defeat at least two different enemies to progress
-- boss?
+takeDamage method
+- allows to user to take damage
 
-movement method
-- allows for the user to move through the location
-- user can move north, south, east, west
-- different directions have different endings depending on what paths you go on
-- different paths can intersect
+gameLose method
+- checks if the user is dead, and ends the program if they are
 
-win location method
-- sets a place that the user has to get to in order to win
-- once the user has moved through the correct locations and has beaten the required enemies, they win
 
 Adventure class
 - Welcomes the user to the location that they start in
@@ -76,5 +58,24 @@ Adventure class
 - Use a while loop for the movement and randomized enemies
 - Use while loop for battle
 - If the character dies, the user loses
-- Once the user's character gets to a specific location, they win
-- Display their total stats
+
+
+Monster Class
+
+Constructor
+public Monster
+- creates a monster
+
+Methods
+
+attack method
+- allows to monster to attack
+
+randomized enemies method
+- randomizes the enemies that the user meets
+
+takeDamage method
+- makes the enemy take damage
+
+isDead method
+- checks if the monster is dead

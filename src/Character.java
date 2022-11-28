@@ -7,7 +7,6 @@ public class Character {
     private String yourLocation = "";
     private int currentHealthbar;
     private int totalHealthbar;
-    private String[] inventory = new String [10];
     private boolean necklace = false;
 
     /**
